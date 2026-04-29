@@ -1,0 +1,105 @@
+    public static void main(String[] args)
+    {
+        // length()
+        String s1 = "Java Programming";
+        System.out.println(s1.length()); // 16
+
+        // charAt(index)
+        String s2 = "Java";
+        System.out.println(s2.charAt(2)); //v
+
+        // toUpperCase()
+        String s3 = "java";
+        System.out.println(s3.toUpperCase()); // JAVA
+
+        // toLowerCase()
+        String s4 = "JAVA";
+        System.out.println(s4.toLowerCase()); // java
+
+        // equals() and compareTo()
+        String S1 = "Java";
+        String S2 = "java";
+        System.out.println(S1.equals(S2)); // false
+        System.out.println(S1.compareTo(S2)); // Nagative Value
+
+        // equalsIgnoreCase()
+        String p1 = "Java";
+        String p2 = "java";
+        System.out.println(p1.equalsIgnoreCase(p2)); // true
+
+        // compareTo()
+        String q1 = "Apple";
+        String q2 = "Banana";
+        System.out.println(q1.compareTo(q2)); // -1
+
+        // contains()
+        String s = "Hello World";
+        System.out.println(s.contains("World"));  // true
+
+        // startsWith() / endsWith()
+        String str = "Java Programming";
+        System.out.println(str.startsWith("Java"));  // true
+        System.out.println(str.endsWith("ing"));     // true
+
+        // indexOf() / lastIndexOf()
+        String str1 = "banana";
+        System.out.println(str1.indexOf("a"));      // 1
+        System.out.println(str1.lastIndexOf("a"));  // 5
+
+        // substring()
+        String s5 = "HelloWorld";
+        System.out.println(s5.substring(0, 5)); // Hello
+
+        // replace()
+        String s6 = "Java";
+        System.out.println(s6.replace('a', 'o')); // Jovo
+
+        // trim()
+        String s7 = " Hello World ";
+        System.out.println(s7.trim()); // Hello World
+
+        // concat
+        String s8 = "Hello";
+        String s9 = "World";
+        System.out.println(s8.concat(s9)); //HelloWorld
+
+        // isEmpty()
+        String s10 = "";
+        System.out.println(s10.isEmpty());  // true
+
+        // valueOf()
+        int a = 10;
+        String p = String.valueOf(a);
+        System.out.println(p);  // "10"
+
+        // intern() use- heap ke under bna object ko scp me dalna
+        String r1 = new String("Java");
+        String r2 = r1.intern();
+        System.out.println(r2); // java
+
+        // matches()
+        String t = "abc123";
+        System.out.println(t.matches("[a-z0-9]+"));  // true
+
+        // toCharArray()
+        String m = "Java";
+        char[] arr = m.toCharArray();
+        for(char ch : arr)
+        {
+            System.out.print(ch +" ");
+        }
+        System.out.println();
+
+        // join()
+        String n = String.join("-", "Java", "is", "fun");
+        System.out.println(n);  // Java-is-fun
+
+        // split()
+        String S = "a,b,c";
+        String[] Arr = S.split(",");
+        for(String i : Arr) 
+        {
+            System.out.print(i + " ");
+        }
+
+    }
