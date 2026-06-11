@@ -1,4 +1,3 @@
-
     // Find Digit of a Number
     static String DigitOfNum(int num)
     {
@@ -23,8 +22,6 @@
         }
     }
 
-
-
     // Find count of Digit of a Number
     static int CountOfDigitOfNum(int num)
     {
@@ -38,7 +35,6 @@
         }
         return count;
     }
-
 
     // Find sum of Digit of a Number
     static int SumOfDigitOfNum(int num)
@@ -54,9 +50,7 @@
         return sum;
     }
 
-
-
-    // Reverse of Digit of a Number
+    // Reverse of digit of a number
     static int ReverseOfDigitOfNum(int num)
     {
         int revNum = 0;
@@ -70,8 +64,7 @@
         return revNum;
     }
 
-
-    // Find a Number is Palindrome or not
+    // cheack number is palindrome or not
     static boolean isPalindrome(int n)
     {
         int origionalNum = n;
@@ -89,7 +82,7 @@
         return false;
     }
 
-    //   Best Approach
+    // cheack number is palindrome or not
     static boolean checkpalindrome(int num)
     {
         String s = String.valueOf(num);
@@ -108,8 +101,7 @@
         return true;
     }
 
-
-    // Check number is prime ornot
+    // cheack number is prime or not
     static boolean isPrimeNum(int no)
     {
         // loop ko 2 se n tk chlega
@@ -132,7 +124,7 @@
         return true;
     }
 
-    // Find HCF / GCD of a number
+    // Find GCD OR HCF of a number
     static int getGCDOorHCF(int a, int b)
     {
         while(b != 0)
@@ -145,8 +137,7 @@
         return ans;
     }
 
-
-    // Find HCF / GCD of a number
+   // Find LCM of a number
     static int getLCM(int a, int b)
     {
         int gcd = getGCDOorHCF(a, b);
@@ -154,8 +145,7 @@
         return lcm;
     }
 
-
-    // Find number is Armstrong or not
+    // cheack number is Armstrong or not
     static boolean isArmstrongNum(int num)
     {
         int sum = 0;
@@ -177,8 +167,7 @@
         }
     }
 
-
-    // check number is divisors and Perfect Number or not
+    // cheack number is divisors and Perfect Number or not
     static boolean checkPerfectNum(int numm)
     {
         int sum = 1;
@@ -201,7 +190,7 @@
         }
     }
 
-    //Print all Primes of a number
+    // Print all prime numbers
     static void PrintisAllPrimes(int no)
     {
         // loop ko 2 se _/n tk chlega [i <= root(n) == i^2 <= n]
@@ -210,7 +199,7 @@
             boolean isPrime = isPrimeNum(i);
             if(isPrime == true)
             {
-                System.out.print(i +" ");
+                 System.out.print(i +" ");
             }
         }
 
@@ -232,8 +221,7 @@
         }
     }
 
-
-    // Print factorial of a number
+    // Find factorial of a number
     static int PrintFactorial(int n)
     {
         int fact = 1;
@@ -244,7 +232,7 @@
         return fact;
     }
 
-    // Find power of a number
+    // Find poer of a number
     static int PowerOfaNum(int a, int b)
     {
         int power = 1;
@@ -256,9 +244,9 @@
     }
 
 
-  public static void main(String[] args)
-  {
-       int num = 53127;
+    public static void main(String[] args)
+    {
+        int num = 53127;
         System.out.println(DigitOfNum(num));
         printDigitOfNum(num);
         System.out.println(CountOfDigitOfNum(num));
@@ -290,3 +278,5 @@
         System.out.println(PrintFactorial(5));
         System.out.println(PowerOfaNum(25, 5));
     }
+}
+
