@@ -1,0 +1,292 @@
+
+    // Find Digit of a Number
+    static String DigitOfNum(int num)
+    {
+        String res = "";
+        while(num != 0)
+        {
+            int digit = num % 10;
+            res = digit +" " +res;
+            num = num / 10;
+        }
+        return res;
+    }
+
+    // Best Approach
+    static void printDigitOfNum(int num)
+    {
+        String s = String.valueOf(num);
+
+        for(int i=0; i<s.length(); i++)
+        {
+            System.out.print(s.charAt(i) +" ");
+        }
+    }
+
+
+
+    // Find count of Digit of a Number
+    static int CountOfDigitOfNum(int num)
+    {
+        int digit = 0;
+        int count = 0;
+        while(num != 0)
+        {
+            digit = num % 10;
+            count++;
+            num = num / 10;
+        }
+        return count;
+    }
+
+
+    // Find sum of Digit of a Number
+    static int SumOfDigitOfNum(int num)
+    {
+        int digit = 0;
+        int sum = 0;
+        while(num != 0)
+        {
+            digit = num % 10;
+            sum += digit;
+            num = num / 10;
+        }
+        return sum;
+    }
+
+
+
+    // Reverse of Digit of a Number
+    static int ReverseOfDigitOfNum(int num)
+    {
+        int revNum = 0;
+        int ans = 0;
+        while(num != 0)
+        {
+            int digit = num % 10;
+            revNum = revNum * 10 + digit;
+            num = num / 10;
+        }
+        return revNum;
+    }
+
+
+    // Find a Number is Palindrome or not
+    static boolean isPalindrome(int n)
+    {
+        int origionalNum = n;
+        int revNum = 0;
+        while(n != 0)
+        {
+            int digit = n % 10;
+            revNum = revNum * 10 + digit ;
+            n = n / 10;
+        }
+        if(origionalNum == revNum)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    //   Best Approach
+    static boolean checkpalindrome(int num)
+    {
+        String s = String.valueOf(num);
+        int start = 0;
+        int end = s.length()-1;
+
+        while(start < end)
+        {
+            if(s.charAt(start) != s.charAt(end))
+            {
+                return false;
+            }
+            start++;
+            end--;
+        }
+        return true;
+    }
+
+
+    // Check number is prime ornot
+    static boolean isPrimeNum(int no)
+    {
+        // loop ko 2 se n tk chlega
+        for(int i=2; i<no; i++)
+        {
+            if(no % i == 0)
+            {
+               return false;
+            }
+        }
+
+        // loop ko 2 se _/n tk chlega [i <= root(n) == i^2 <= n]
+        for(int i=2; i*i<=no; i++)
+        {
+            if(no % i == 0)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // Find HCF / GCD of a number
+    static int getGCDOorHCF(int a, int b)
+    {
+        while(b != 0)
+        {
+            int olfValOfb = b;
+            b = a % b;
+            a = olfValOfb;
+        }
+        int ans = a;
+        return ans;
+    }
+
+
+    // Find HCF / GCD of a number
+    static int getLCM(int a, int b)
+    {
+        int gcd = getGCDOorHCF(a, b);
+        int lcm = (a * b) / gcd;
+        return lcm;
+    }
+
+
+    // Find number is Armstrong or not
+    static boolean isArmstrongNum(int num)
+    {
+        int sum = 0;
+        int orgNum = num;
+        while(num != 0)
+        {
+            int digit = num % 10;
+            int cubeOfDigit = digit * digit * digit;
+            sum += cubeOfDigit;
+            num /= 10;
+        }
+        if(sum == orgNum)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+
+    // check number is divisors and Perfect Number or not
+    static boolean checkPerfectNum(int numm)
+    {
+        int sum = 1;
+        for(int i=2; i*i<=numm; i++)
+        {
+            if(numm % i == 0)
+            {
+                int firstFact = i;
+                int secondFact = numm/i;
+                sum = sum + firstFact + secondFact;
+            }
+        }
+        if(sum == numm)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    //Print all Primes of a number
+    static void PrintisAllPrimes(int no)
+    {
+        // loop ko 2 se _/n tk chlega [i <= root(n) == i^2 <= n]
+        for(int i=2; i<=no; i++)
+        {
+            boolean isPrime = isPrimeNum(i);
+            if(isPrime == true)
+            {
+                System.out.print(i +" ");
+            }
+        }
+
+        for(int i=2; i<=no; i++)
+        {
+            boolean isPrime = true;
+            for(int j=2; j*j<=i; j++)
+            {
+                if(i % j == 0)
+                {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if(isPrime)
+            {
+                System.out.print(i +" ");
+            }
+        }
+    }
+
+
+    // Print factorial of a number
+    static int PrintFactorial(int n)
+    {
+        int fact = 1;
+        for(int i=1; i<= n; i++)
+        {
+            fact *= i;
+        }
+        return fact;
+    }
+
+    // Find power of a number
+    static int PowerOfaNum(int a, int b)
+    {
+        int power = 1;
+        for(int i=1; i<=b; i++)
+        {
+            power *= a;
+        }
+        return power;
+    }
+
+
+  public static void main(String[] args)
+  {
+       int num = 53127;
+        System.out.println(DigitOfNum(num));
+        printDigitOfNum(num);
+        System.out.println(CountOfDigitOfNum(num));
+        System.out.println(SumOfDigitOfNum(num));
+        System.out.println(ReverseOfDigitOfNum(num));
+
+        int n = 1221;
+        boolean ans = isPalindrome(n);
+        if(ans == true)
+        {
+            System.out.println("It is a palindrome");
+        }
+        else
+        {
+            System.out.println("It is not a palindrome");
+        }
+
+        System.out.println(checkpalindrome(n));
+
+        int no = 7;
+        System.out.println(isPrimeNum(no));
+
+        System.out.println(getGCDOorHCF(18, 12));
+        System.out.println(getLCM(18, 12));
+        System.out.println(isArmstrongNum(153));
+        System.out.println(checkPerfectNum(6));
+
+        PrintisAllPrimes(15);
+        System.out.println(PrintFactorial(5));
+        System.out.println(PowerOfaNum(25, 5));
+    }
